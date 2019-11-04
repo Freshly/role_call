@@ -8,8 +8,8 @@ Gem::Specification.new do |spec|
   spec.authors       = [ "Eric Garside" ]
   spec.email         = %w[garside@gmail.com]
 
-  spec.summary       = ""
-  spec.description   = ""
+  spec.summary       = "A simple and extensible approach to role-based access control management in Rails"
+  spec.description   = "Describe the roles and permissions of your system with clear, testable, self-documenting code"
   spec.homepage      = "https://www.freshly.com/"
   spec.license       = "MIT"
 

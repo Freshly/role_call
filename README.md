@@ -1,8 +1,11 @@
 # RoleCall
 
-...gemspec.description...
+Describe the roles and permissions of your system with clear, testable, self-documenting code
 
 [![Gem Version](https://badge.fury.io/rb/role_call.svg)](https://badge.fury.io/rb/role_call)
+[![Build Status](https://semaphoreci.com/api/v1/freshly/role_call/branches/develop/badge.svg)](https://semaphoreci.com/freshly/role_call)
+[![Maintainability](https://api.codeclimate.com/v1/badges/cc0b31cba8bea2408c1c/maintainability)](https://codeclimate.com/github/Freshly/role_call/maintainability)
+[![Test Coverage](https://api.codeclimate.com/v1/badges/cc0b31cba8bea2408c1c/test_coverage)](https://codeclimate.com/github/Freshly/role_call/test_coverage)
 
 * [Installation](#installation)
 * [Usage](#usage)
