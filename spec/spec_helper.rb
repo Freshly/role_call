@@ -19,10 +19,9 @@ require "role_call"
 require_relative "../lib/role_call/spec_helper"
 
 require_relative "support/shared_context/with_roles_and_permissions"
-
 require_relative "support/shared_context/with_an_example_permission"
-
 require_relative "support/shared_context/with_an_example_role"
+require_relative "support/shared_context/with_an_example_actor"
 
 require_relative "support/test_classes/do_anything_permission"
 require_relative "support/test_classes/administrative_permission"
