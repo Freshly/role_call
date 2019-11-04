@@ -7,5 +7,8 @@ require "spicerack"
 
 require "role_call/version"
 
+require "role_call/permission_base"
+require "role_call/role_base"
+
 module RoleCall
 end
