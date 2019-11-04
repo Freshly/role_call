@@ -1,6 +1,6 @@
 # RoleCall
 
-...gemspec.description...
+Describe the roles and permissions of your system with clear, testable, self-documenting code
 
 [![Gem Version](https://badge.fury.io/rb/role_call.svg)](https://badge.fury.io/rb/role_call)
 
