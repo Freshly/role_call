@@ -3,9 +3,9 @@
 RSpec.shared_context "with roles and permissions" do
   let(:root_name) { Faker::Internet.domain_word.capitalize }
 
-  let(:regulation0_name) { "#{root_name}xPermission" }
-  let(:regulation1_name) { "#{root_name}yPermission" }
-  let(:regulation2_name) { "#{root_name}zPermission" }
+  let(:permission0_name) { "#{root_name}xPermission" }
+  let(:permission1_name) { "#{root_name}yPermission" }
+  let(:permission2_name) { "#{root_name}zPermission" }
 
   let(:permission0) { Class.new(RoleCall::PermissionBase) }
   let(:permission1) { Class.new(RoleCall::PermissionBase) }

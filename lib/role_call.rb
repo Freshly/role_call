@@ -9,6 +9,7 @@ require "role_call/version"
 
 require "role_call/permission_base"
 require "role_call/role_base"
+require "role_call/actor_base"
 
 module RoleCall
 end
