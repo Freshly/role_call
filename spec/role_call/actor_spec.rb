@@ -1,9 +1,15 @@
 # frozen_string_literal: true
 
-RSpec.describe RoleCall::Actors::Permissions, type: :concern do
+RSpec.describe RoleCall::Actor, type: :concern do
   include_context "with an example actor"
 
-  it { is_expected.to define_argument :roles, allow_nil: false }
+  it { is_expected.to include_module ShortCircuIt }
+
+  describe "#roles" do
+    subject { example_actor.roles }
+
+    it { is_expected.to eq [] }
+  end
 
   describe "#permissions" do
     include_context "with roles and permissions"
@@ -30,10 +36,9 @@ RSpec.describe RoleCall::Actors::Permissions, type: :concern do
   describe "#permissions_map" do
     include_context "with roles and permissions"
 
+    subject { example_actor.__send__(:permissions_map) }
+
     let(:roles) { [ role0, role1 ] }
-
-    subject { example_actor.permissions_map }
-
     let(:expected_hash) do
       Hash[permission0.key, permission0, permission1.key, permission1, permission2.key, permission2]
     end
@@ -81,7 +86,7 @@ RSpec.describe RoleCall::Actors::Permissions, type: :concern do
         it { is_expected.to eq true }
       end
 
-      context "when regulation" do
+      context "with something responding to key" do
         let(:object) { double(key: permission0.key) }
 
         it { is_expected.to eq true }
