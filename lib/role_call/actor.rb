@@ -16,7 +16,11 @@ module RoleCall
     end
 
     def permissions
-      Array.wrap(try(:roles)).map(&:permissions).flatten.uniq
+      Array.wrap(roles).map(&:permissions).flatten.uniq
+    end
+
+    def roles
+      [ try(:role) ].compact
     end
 
     private
