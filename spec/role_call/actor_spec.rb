@@ -8,7 +8,25 @@ RSpec.describe RoleCall::Actor, type: :concern do
   describe "#roles" do
     subject { example_actor.roles }
 
-    it { is_expected.to eq [] }
+    context "with role" do
+      before { allow(example_actor).to receive(:role).and_return(role) }
+
+      context "when nil" do
+        let(:role) { nil }
+
+        it { is_expected.to eq [] }
+      end
+
+      context "when present" do
+        let(:role) { double }
+
+        it { is_expected.to eq [ role ] }
+      end
+    end
+
+    context "without role" do
+      it { is_expected.to eq [] }
+    end
   end
 
   describe "#permissions" do
@@ -16,7 +34,11 @@ RSpec.describe RoleCall::Actor, type: :concern do
 
     subject { example_actor.permissions }
 
+    before { allow(example_actor).to receive(:roles).and_return(roles) }
+
     context "with no roles" do
+      let(:roles) { [] }
+
       it { is_expected.to eq [] }
     end
 
@@ -38,6 +60,8 @@ RSpec.describe RoleCall::Actor, type: :concern do
 
     subject { example_actor.__send__(:permissions_map) }
 
+    before { allow(example_actor).to receive(:roles).and_return(roles) }
+
     let(:roles) { [ role0, role1 ] }
     let(:expected_hash) do
       Hash[permission0.key, permission0, permission1.key, permission1, permission2.key, permission2]
@@ -52,6 +76,8 @@ RSpec.describe RoleCall::Actor, type: :concern do
     subject { example_actor.permitted_to?(object) }
 
     let(:roles) { role0 }
+
+    before { allow(example_actor).to receive(:roles).and_return(roles) }
 
     context "without permission" do
       context "when class" do
