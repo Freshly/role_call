@@ -8,6 +8,7 @@ module RoleCall
       include ShortCircuIt
 
       memoize :permissions
+      memoize :permission_classes
       memoize :permissions_map
     end
 
@@ -16,7 +17,7 @@ module RoleCall
     end
 
     def permissions
-      Array.wrap(roles).map(&:permissions).flatten.uniq
+      permission_classes.map(&:key).uniq
     end
 
     def roles
@@ -25,8 +26,12 @@ module RoleCall
 
     private
 
+    def permission_classes
+      Array.wrap(roles).map(&:permissions).flatten
+    end
+
     def permissions_map
-      permissions.index_by(&:key)
+      permission_classes.index_by(&:key)
     end
   end
 end
