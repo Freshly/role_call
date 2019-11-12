@@ -45,13 +45,13 @@ RSpec.describe RoleCall::Actor, type: :concern do
     context "with one role" do
       let(:roles) { role0 }
 
-      it { is_expected.to match_array [ permission0, permission1 ] }
+      it { is_expected.to match_array [ permission0.key, permission1.key ] }
     end
 
     context "with many roles" do
       let(:roles) { [ role0, role1 ] }
 
-      it { is_expected.to match_array [ permission0, permission1, permission2 ] }
+      it { is_expected.to match_array [ permission0.key, permission1.key, permission2.key ] }
     end
   end
 
