@@ -12,7 +12,7 @@ Gem::Specification.new do |spec|
 
   spec.summary       = "A simple and extensible approach to role-based access control management in Rails"
   spec.description   = "Describe the roles and permissions of your system with clear, testable, self-documenting code"
-  spec.homepage      = "https://www.freshly.com/"
+  spec.homepage      = "https://github.com/Freshly/role_call"
   spec.license       = "MIT"
 
   spec.files         = Dir["README.md", "LICENSE.txt", "lib/**/{*,.[a-z]*}"]
